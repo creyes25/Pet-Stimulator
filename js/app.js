@@ -20,7 +20,21 @@ const restBtn = document.querySelector('#rest-btn')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
+startBtn.addEventListener('click', (evt) => {
+})
+feedBtn.addEventListener('click', (evt) => {
+  
+})
+attentionBtn.addEventListener('click', (evt) => {
+  
+})
+entertainBtn.addEventListener('click', (evt) => {
+  
+})
+restBtn.addEventListener('click', (evt) => {
+  console.log(evt.target)
 
+})
 
 
 

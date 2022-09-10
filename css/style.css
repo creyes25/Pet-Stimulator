@@ -1,6 +1,13 @@
 body {
   text-align: center;
 }
+div{
+  margin: 50px;
+}
+
+.progress-bar {
+  margin: 0;
+}
 
 #care-btns{
   display: flex;

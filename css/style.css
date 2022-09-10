@@ -1,3 +1,9 @@
 body {
   text-align: center;
 }
+
+#care-btns{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: flex-end;
+}

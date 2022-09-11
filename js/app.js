@@ -1,10 +1,11 @@
 /*-------------------------------- Constants --------------------------------*/
-
+const counter = setInterval(timer, 1000)
 
 
 
 
 /*-------------------------------- Variables --------------------------------*/
+let timeLeft = 5
 let moodProgress = 0 
 
 
@@ -15,6 +16,7 @@ const attentionBtn = document.querySelector('#attention-btn')
 const entertainBtn = document.querySelector('#entertain-btn')
 const restBtn = document.querySelector('#rest-btn')
 const progressBar = document.querySelector('.progress-bar')
+const countdownEl = document.querySelector('#countdown')
 
 
 
@@ -32,6 +34,7 @@ restBtn.addEventListener('click', increaseMood)
 
 init()
 function init() {
+  clearInterval(counter)
   progressBar.style.width = '0'
   progressBar.textContent = ''
 }
@@ -43,3 +46,12 @@ function increaseMood(evt) {
     progressBar.textContent = `${moodProgress}%`
   }
 }
+
+function timer(){
+  timeLeft -= 1
+  countdownEl.textContent = `${timeLeft} seconds`
+  if (timeLeft <= 0) {
+    clearInterval(counter)
+  }
+}
+

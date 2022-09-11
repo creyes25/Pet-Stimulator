@@ -30,7 +30,11 @@ restBtn.addEventListener('click', increaseMood)
 
 /*-------------------------------- Functions --------------------------------*/
 
-
+init()
+function init() {
+  progressBar.style.width = '0'
+  progressBar.textContent = ''
+}
 
 function increaseMood(evt) {
   if (evt) {

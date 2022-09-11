@@ -1,8 +1,10 @@
 /*-------------------------------- Constants --------------------------------*/
-const counter = setInterval(timer, 1000)
+
+
 
 /*-------------------------------- Variables --------------------------------*/
-let timeLeft = 60
+let timeLeft = 5
+let counter
 let moodProgress = 0 
 
 
@@ -17,7 +19,7 @@ const countdownEl = document.querySelector('#timer')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-// startBtn.addEventListener('click', increaseMood)
+startBtn.addEventListener('click', init)
 feedBtn.addEventListener('click', increaseMood)
 attentionBtn.addEventListener('click', increaseMood)
 entertainBtn.addEventListener('click', increaseMood)
@@ -26,11 +28,32 @@ restBtn.addEventListener('click', increaseMood)
 
 /*-------------------------------- Functions --------------------------------*/
 
-init()
+
 function init() {
   countdownEl.textContent = '02 : 00'
+  if (counter) {
+    clearInterval(counter)
+  }else {
+    startTimer()
+  }
   progressBar.style.width = '0'
   progressBar.textContent = ''
+}
+
+function startTimer() {
+  counter = setInterval(timerCountDown, 1000)
+}
+
+
+function timerCountDown(){
+  timeLeft -= 1
+  let min = Math.floor(timeLeft / 60)
+  let seconds = Math.floor(timeLeft % 60)
+  countdownEl.textContent = `${min < 10 ? '0' : '' }${min} : ${seconds < 10 ? '0' : ''}${seconds}`
+  if (timeLeft <= 0) {
+    clearInterval(counter)
+    countdownEl.textContent = 'Times Up!'
+  }
 }
 
 function increaseMood(evt) {
@@ -38,17 +61,5 @@ function increaseMood(evt) {
     moodProgress += 1
     progressBar.style.width = `${moodProgress}%`
     progressBar.textContent = `${moodProgress}%`
-  }
-}
-
-function timer(){
-  timeLeft -= 1
-  let min = Math.floor(timeLeft / 60)
-  let seconds = Math.floor(timeLeft % 60)
-  countdownEl.textContent = `${min < 10 ? '0' : '' }${min} : ${seconds < 10 ? '0' : ''}${seconds}`
-
-  if (timeLeft <= 0) {
-    clearInterval(counter)
-    countdownEl.textContent = 'Times Up!'
   }
 }

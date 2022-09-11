@@ -30,9 +30,11 @@ restBtn.addEventListener('click', increaseMood)
 
 
 function init() {
+  startBtn.style.display = 'none'
   countdownEl.textContent = '02 : 00'
   if (counter) {
     clearInterval(counter)
+    counter = null
   }else {
     startTimer()
   }

@@ -17,6 +17,7 @@ const restBtn = document.querySelector('#rest-btn')
 const progressBar = document.querySelector('.progress-bar')
 const countdownEl = document.querySelector('#timer')
 const moodStatus = document.querySelector('#mood-status')
+const resetbtn = document.querySelector('#reset-btn')
 
 
 
@@ -29,8 +30,6 @@ restBtn.addEventListener('click', increaseMood)
 
 
 /*-------------------------------- Functions --------------------------------*/
-
-
 function init() {
   startBtn.style.display = 'none'
   countdownEl.textContent = '02 : 00'
@@ -48,7 +47,6 @@ function init() {
 function startTimer() {
   counter = setInterval(timerCountDown, 1000)
 }
-
 
 function timerCountDown(){
   timeLeft -= 1
@@ -71,7 +69,6 @@ function timesUp() {
   }
 }
 
-
 function displayMood(){
   const happy = "You're a great pet owner, your pet is happy! "
   const sad = "BOOOHOOO! You're a horrible owner, your pet is sad.... you should be disappointed!"
@@ -82,14 +79,12 @@ function displayMood(){
   }
 }
 
-
 function disableButtons(){
   feedBtn.disabled = true
   attentionBtn.disabled = true
   entertainBtn.disabled = true
   restBtn.disabled = true
 }
-
 
 function increaseMood(evt) {
   if (evt) {
@@ -100,3 +95,9 @@ function increaseMood(evt) {
   timesUp()
 }
 
+function resetGame() {
+  resetbtn.visibility = 'visible'
+  resetbtn.textContent = 'Want to try again?'
+  init()
+
+}

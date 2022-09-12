@@ -1,10 +1,17 @@
 /*-------------------------------- Constants --------------------------------*/
-
-
+const currentNeeds = [
+  "I'm hungry", 
+  "Can you give me food?", 
+  "I feel lonely", 
+  "I want your attention", 
+  "I'm bored", "I want to play", 
+  "I'm tired", "I'm ready to sleep"
+]
 
 /*-------------------------------- Variables --------------------------------*/
 let timeLeft = 5
 let counter
+let randomNeed = currentNeeds[Math.floor(Math.random() * currentNeeds.length)]
 let moodProgress = 0 
 
 
@@ -17,7 +24,7 @@ const restBtn = document.querySelector('#rest-btn')
 const progressBar = document.querySelector('.progress-bar')
 const countdownEl = document.querySelector('#timer')
 const moodStatus = document.querySelector('#mood-status')
-
+const petNeed = document.querySelector('#need')
 
 
 
@@ -59,18 +66,28 @@ function timerCountDown(){
   timesUp()
 }
 
+
+
+function increaseMood(evt) {
+  if (evt) {
+    moodProgress += 10
+    progressBar.textContent = `${moodProgress}%`
+    progressBar.style.width = `${moodProgress}%`
+  }
+  timesUp()
+}
+
 function timesUp() {
   if (timeLeft === 0) {
     clearInterval(counter)
     countdownEl.textContent = 'Times Up!'
-    displayMood()
+    finalMood()
   }else if (moodProgress === 100 ) {
     clearInterval(counter)
-    displayMood()
+    finalMood()
   }
 }
-
-function displayMood(){
+function finalMood(){
   const happy = "You're a great pet owner, your pet is happy! "
   const sad = "BOOOHOOO! You're a horrible owner, your pet is sad.... you should be disappointed!"
   if (moodProgress === 100) {
@@ -81,6 +98,7 @@ function displayMood(){
   disableButtons()
 }
 
+
 function disableButtons(){
   feedBtn.disabled = true
   attentionBtn.disabled = true
@@ -88,12 +106,5 @@ function disableButtons(){
   restBtn.disabled = true
 }
 
-function increaseMood(evt) {
-  if (evt) {
-    moodProgress += 10
-    progressBar.textContent = `${moodProgress}%`
-    progressBar.style.width = `${moodProgress}%`
-  }
-  timesUp()
-}
+
 

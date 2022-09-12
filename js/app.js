@@ -41,7 +41,8 @@ function init() {
     startTimer()
   }
   progressBar.style.width = '0'
-  
+  moodStatus.textContent = ''
+
 }
 
 function startTimer() {

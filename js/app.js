@@ -55,6 +55,7 @@ function init() {
 
 function startTimer() {
   startBtn.style.display = 'none'
+  displayNeed()
   counter = setInterval(timerCountDown, 1000)
 }
 
@@ -66,7 +67,9 @@ function timerCountDown(){
   timesUp()
 }
 
-
+function displayNeed() {
+  petNeed.textContent = randomNeed
+}
 
 function increaseMood(evt) {
   if (evt) {

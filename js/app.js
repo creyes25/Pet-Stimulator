@@ -91,9 +91,7 @@ function increaseMood(evt) {
     moodProgress += 10
     progressBar.style.width = `${moodProgress}%`
   }
-  timesUp()
   finalMood()
-
 }
 
 

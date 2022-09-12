@@ -70,8 +70,6 @@ function timesUp() {
 function finalMood(){
   let happy, sad
   if (moodProgress === 100) {
-    clearInterval(counter)
-    disableButtons()
     // happy = 'Wow! Your pet is happy!'
   }else {
     // sad = "Boohoo! you're a horrible owner"
@@ -89,8 +87,10 @@ function disableButtons(){
 function increaseMood(evt) {
   if (evt) {
     moodProgress += 10
+    progressBar.textContent = `${moodProgress}%`
     progressBar.style.width = `${moodProgress}%`
   }
+  timesUp()
   finalMood()
 }
 

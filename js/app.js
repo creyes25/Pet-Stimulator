@@ -3,7 +3,7 @@
 
 
 /*-------------------------------- Variables --------------------------------*/
-let timeLeft = 30
+let timeLeft = 5
 let counter
 let moodProgress = 0 
 
@@ -52,17 +52,18 @@ function timerCountDown(){
   let min = Math.floor(timeLeft / 60)
   let seconds = Math.floor(timeLeft % 60)
   countdownEl.textContent = `${min < 10 ? '0' : '' }${min} : ${seconds < 10 ? '0' : ''}${seconds}`
-  if (timeLeft <= 0) {
-    clearInterval(counter)
-    countdownEl.textContent = 'Times Up!'
-    timesUp()
-  }
+  timesUp()
 }
 
 function timesUp() {
   if (timeLeft === 0) {
+    clearInterval(counter)
+    countdownEl.textContent = 'Times Up!'
     disableButtons()
     finalMood()
+  }else if (moodProgress === 100 ) {
+    clearInterval(counter)
+    disableButtons()
   }
 }
 
@@ -90,7 +91,9 @@ function increaseMood(evt) {
     moodProgress += 10
     progressBar.style.width = `${moodProgress}%`
   }
+  timesUp()
   finalMood()
+
 }
 
 

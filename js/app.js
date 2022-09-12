@@ -16,6 +16,8 @@ const entertainBtn = document.querySelector('#entertain-btn')
 const restBtn = document.querySelector('#rest-btn')
 const progressBar = document.querySelector('.progress-bar')
 const countdownEl = document.querySelector('#timer')
+const moodStatus = document.querySelector('#mood-status')
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -39,7 +41,7 @@ function init() {
     startTimer()
   }
   progressBar.style.width = '0'
-
+  
 }
 
 function startTimer() {
@@ -60,21 +62,25 @@ function timesUp() {
     clearInterval(counter)
     countdownEl.textContent = 'Times Up!'
     disableButtons()
-    finalMood()
+    displayMood()
   }else if (moodProgress === 100 ) {
     clearInterval(counter)
     disableButtons()
+    displayMood()
   }
 }
 
-function finalMood(){
-  let happy, sad
+
+function displayMood(){
+  const happy = "You're a great pet owner, your pet is happy! "
+  const sad = "BOOOHOOO! You're a horrible owner, your pet is sad.... you should be disappointed!"
   if (moodProgress === 100) {
-    // happy = 'Wow! Your pet is happy!'
+    moodStatus.textContent = happy
   }else {
-    // sad = "Boohoo! you're a horrible owner"
+    moodStatus.textContent = sad
   }
 }
+
 
 function disableButtons(){
   feedBtn.disabled = true
@@ -91,10 +97,5 @@ function increaseMood(evt) {
     progressBar.style.width = `${moodProgress}%`
   }
   timesUp()
-  finalMood()
 }
 
-
-function render () {
-
-}

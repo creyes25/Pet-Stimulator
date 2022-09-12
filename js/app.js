@@ -4,23 +4,25 @@ const currentNeeds = [
   "Can you give me food?", 
   "I feel lonely", 
   "I want your attention", 
-  "I'm bored", "I want to play", 
-  "I'm tired", "I'm ready to sleep"
+  "I'm bored", 
+  "I want to play", 
+  "I'm tired", 
+  "I'm ready to sleep"
 ]
 
 /*-------------------------------- Variables --------------------------------*/
-let timeLeft = 5
+let timeLeft = 15
 let counter
-let randomNeed = currentNeeds[Math.floor(Math.random() * currentNeeds.length)]
+let randomNeed, needs
 let moodProgress = 0 
 
 
 /*------------------------ Cached Element References ------------------------*/
 const startBtn = document.querySelector('#start')
-const feedBtn = document.querySelector('#feed-btn')
-const attentionBtn = document.querySelector('#attention-btn')
-const entertainBtn = document.querySelector('#entertain-btn')
-const restBtn = document.querySelector('#rest-btn')
+const feedBtn = document.querySelector('#feed')
+const attentionBtn = document.querySelector('#attention')
+const entertainBtn = document.querySelector('#entertain')
+const restBtn = document.querySelector('#rest')
 const progressBar = document.querySelector('.progress-bar')
 const countdownEl = document.querySelector('#timer')
 const moodStatus = document.querySelector('#mood-status')
@@ -39,14 +41,16 @@ entertainBtn.addEventListener('click', increaseMood)
 
 /*-------------------------------- Functions --------------------------------*/
 function init() {
-  
+  startBtn.style.display = 'none'
   countdownEl.textContent = '02 : 00'
   moodProgress = 0
   progressBar.style.width = '0'
   moodStatus.textContent = ''
-  if (counter) {
+  if (counter && needs) {
     clearInterval(counter)
+    clearInterval(needs)
     counter = null
+    needs = null
   }else {
     startTimer()
   }
@@ -54,8 +58,7 @@ function init() {
 }
 
 function startTimer() {
-  startBtn.style.display = 'none'
-  displayNeed()
+  needs = setInterval(displayNeed, 2000)
   counter = setInterval(timerCountDown, 1000)
 }
 
@@ -63,30 +66,58 @@ function timerCountDown(){
   timeLeft -= 1
   let min = Math.floor(timeLeft / 60)
   let seconds = Math.floor(timeLeft % 60)
+  
   countdownEl.textContent = `${min < 10 ? '0' : '' }${min} : ${seconds < 10 ? '0' : ''}${seconds}`
   timesUp()
 }
 
 function displayNeed() {
+  randomNeed = currentNeeds[Math.floor(Math.random() * currentNeeds.length)]
   petNeed.textContent = randomNeed
 }
 
+
+
 function increaseMood(evt) {
-  if (evt) {
-    moodProgress += 10
-    progressBar.textContent = `${moodProgress}%`
-    progressBar.style.width = `${moodProgress}%`
+  let needBtn = evt.target.id
+  if (randomNeed === currentNeeds[0] || randomNeed === currentNeeds[1]) {
+    if (needBtn === 'feed'){
+      moodProgress += 2
+      progressBar.style.width = `${moodProgress}%`
+      progressBar.textContent = `${moodProgress}%`
+    }
+  }else if (randomNeed === currentNeeds[2] || randomNeed === currentNeeds[3]) {
+    if (needBtn === 'attention'){
+      moodProgress += 2
+      progressBar.style.width = `${moodProgress}%`
+      progressBar.textContent = `${moodProgress}%`
+    }
+  }else if (randomNeed === currentNeeds[4] || randomNeed === currentNeeds[5]) {
+    if (needBtn === 'entertain'){
+      moodProgress += 2
+      progressBar.style.width = `${moodProgress}%`
+      progressBar.textContent = `${moodProgress}%`
+    }
+  }else if (randomNeed === currentNeeds[2] || randomNeed === currentNeeds[3]) {
+    if (needBtn === 'rest'){
+      moodProgress += 2
+      progressBar.style.width = `${moodProgress}%`
+      progressBar.textContent = `${moodProgress}%`
+    }
   }
+
   timesUp()
 }
 
 function timesUp() {
   if (timeLeft === 0) {
     clearInterval(counter)
+    clearInterval(needs)
     countdownEl.textContent = 'Times Up!'
     finalMood()
   }else if (moodProgress === 100 ) {
     clearInterval(counter)
+    clearInterval(needs)
     finalMood()
   }
 }

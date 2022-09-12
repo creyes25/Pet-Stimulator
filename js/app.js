@@ -55,8 +55,25 @@ function timerCountDown(){
   if (timeLeft <= 0) {
     clearInterval(counter)
     countdownEl.textContent = 'Times Up!'
+    timesUp()
   }
 }
+
+
+
+function timesUp() {
+  if (timeLeft === 0 ) {
+    disableButtons()
+  }
+}
+
+function disableButtons(){
+  feedBtn.disabled = true
+  attentionBtn.disabled = true
+  entertainBtn.disabled = true
+  restBtn.disabled = true
+}
+
 
 function increaseMood(evt) {
   if (evt) {
@@ -64,4 +81,10 @@ function increaseMood(evt) {
     progressBar.style.width = `${moodProgress}%`
     progressBar.textContent = `${moodProgress}%`
   }
+}
+
+
+
+function render () {
+
 }

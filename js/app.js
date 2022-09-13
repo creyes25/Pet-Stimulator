@@ -11,7 +11,7 @@ const currentNeeds = [
 ]
 
 /*-------------------------------- Variables --------------------------------*/
-let timeLeft = 15
+let timeLeft = 120
 let counter
 let randomNeed, needs
 let moodProgress = 0 
@@ -35,6 +35,8 @@ startBtn.addEventListener('click', init)
 feedBtn.addEventListener('click', increaseMood)
 attentionBtn.addEventListener('click', increaseMood)
 entertainBtn.addEventListener('click', increaseMood)
+restBtn.addEventListener('click', increaseMood)
+
 
 
 
@@ -98,7 +100,7 @@ function increaseMood(evt) {
       progressBar.style.width = `${moodProgress}%`
       progressBar.textContent = `${moodProgress}%`
     }
-  }else if (randomNeed === currentNeeds[2] || randomNeed === currentNeeds[3]) {
+  }else if (randomNeed === currentNeeds[6] || randomNeed === currentNeeds[7]) {
     if (needBtn === 'rest'){
       moodProgress += 2
       progressBar.style.width = `${moodProgress}%`

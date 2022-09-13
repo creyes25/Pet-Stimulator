@@ -11,7 +11,7 @@ const currentNeeds = [
 ]
 
 /*-------------------------------- Variables --------------------------------*/
-let timeLeft = 120
+let timeLeft = 10
 let counter
 let randomNeed, needs
 let moodProgress = 0 
@@ -27,7 +27,7 @@ const progressBar = document.querySelector('.progress-bar')
 const countdownEl = document.querySelector('#timer')
 const moodStatus = document.querySelector('#mood-status')
 const petNeed = document.querySelector('#need')
-
+const resetGame = document.querySelector('#reset')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -36,18 +36,19 @@ feedBtn.addEventListener('click', increaseMood)
 attentionBtn.addEventListener('click', increaseMood)
 entertainBtn.addEventListener('click', increaseMood)
 restBtn.addEventListener('click', increaseMood)
-
+resetGame.addEventListener('click', gameReset )
 
 
 
 
 /*-------------------------------- Functions --------------------------------*/
 function init() {
-  startBtn.style.display = 'none'
-  countdownEl.textContent = '02 : 00'
+  startBtn.hidden = startBtn.hidden === true ? false : true
+  countdownEl.textContent = ''
   moodProgress = 0
   progressBar.style.width = '0'
   moodStatus.textContent = ''
+  timeLeft = 10
   if (counter && needs) {
     clearInterval(counter)
     clearInterval(needs)
@@ -77,8 +78,6 @@ function displayNeed() {
   randomNeed = currentNeeds[Math.floor(Math.random() * currentNeeds.length)]
   petNeed.textContent = randomNeed
 }
-
-
 
 function increaseMood(evt) {
   let needBtn = evt.target.id
@@ -117,10 +116,14 @@ function timesUp() {
     clearInterval(needs)
     countdownEl.textContent = 'Times Up!'
     finalMood()
+    resetGame.removeAttribute('hidden')
+
   }else if (moodProgress === 100 ) {
     clearInterval(counter)
     clearInterval(needs)
     finalMood()
+    resetGame.removeAttribute('hidden')
+
   }
 }
 function finalMood(){
@@ -134,7 +137,6 @@ function finalMood(){
   disableButtons()
 }
 
-
 function disableButtons(){
   feedBtn.disabled = true
   attentionBtn.disabled = true
@@ -142,5 +144,9 @@ function disableButtons(){
   restBtn.disabled = true
 }
 
+function gameReset(){
+  resetGame.hidden = true
+  init()
+}
 
 

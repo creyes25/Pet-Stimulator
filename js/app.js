@@ -28,6 +28,7 @@ const countdownEl = document.querySelector('#timer')
 const moodStatus = document.querySelector('#mood-status')
 const petNeed = document.querySelector('#need')
 const resetGame = document.querySelector('#reset')
+const panda = document.querySelector('#panda')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -48,6 +49,7 @@ function init() {
   moodProgress = 0
   progressBar.style.width = '0'
   moodStatus.textContent = ''
+  petNeed.textContent = ''
   timeLeft = 10
   if (counter && needs) {
     clearInterval(counter)
@@ -57,7 +59,7 @@ function init() {
   }else {
     startTimer()
   }
-
+  panda.src = "/assets/images/panda.gif"
 }
 
 function startTimer() {
@@ -77,10 +79,12 @@ function timerCountDown(){
 function displayNeed() {
   randomNeed = currentNeeds[Math.floor(Math.random() * currentNeeds.length)]
   petNeed.textContent = randomNeed
+  
 }
 
 function increaseMood(evt) {
   let needBtn = evt.target.id
+
   if (randomNeed === currentNeeds[0] || randomNeed === currentNeeds[1]) {
     if (needBtn === 'feed'){
       moodProgress += 2
@@ -131,9 +135,12 @@ function finalMood(){
   const sad = "BOOOHOOO! You're a horrible owner, your pet is sad.... you should be disappointed!"
   if (moodProgress === 100) {
     moodStatus.textContent = happy
+    panda.src = '/assets/images/happy.gif'
   }else {
     moodStatus.textContent = sad
+    panda.src = '/assets/images/sad.gif'
   }
+  petNeed.textContent = ''
   disableButtons()
 }
 

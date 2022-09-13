@@ -79,6 +79,17 @@ function timerCountDown(){
 function displayNeed() {
   randomNeed = currentNeeds[Math.floor(Math.random() * currentNeeds.length)]
   petNeed.textContent = randomNeed
+  
+  if (randomNeed === currentNeeds[0] || randomNeed === currentNeeds[1]) {
+    panda.src = '/assets/images/hungry.gif'
+  }else if (randomNeed === currentNeeds[2] || randomNeed === currentNeeds[3]) {
+    panda.src = '/assets/images/lonely.gif'
+  }else if (randomNeed === currentNeeds[4] || randomNeed === currentNeeds[5]) {
+    panda.src = '/assets/images/bored.gif'
+  }else if (randomNeed === currentNeeds[6] || randomNeed === currentNeeds[7]) {
+    panda.src = '/assets/images/tired.gif'
+  }
+  
 
 }
 
@@ -90,24 +101,28 @@ function increaseMood(evt) {
       moodProgress += 2
       progressBar.style.width = `${moodProgress}%`
       progressBar.textContent = `${moodProgress}%`
+      panda.src = '/assets/images/feed.gif'
     }
   }else if (randomNeed === currentNeeds[2] || randomNeed === currentNeeds[3]) {
     if (needBtn === 'attention'){
       moodProgress += 2
       progressBar.style.width = `${moodProgress}%`
       progressBar.textContent = `${moodProgress}%`
+      panda.src = '/assets/images/attention.gif'
     }
   }else if (randomNeed === currentNeeds[4] || randomNeed === currentNeeds[5]) {
     if (needBtn === 'entertain'){
       moodProgress += 2
       progressBar.style.width = `${moodProgress}%`
       progressBar.textContent = `${moodProgress}%`
+      panda.src = '/assets/images/entertain.gif'
     }
   }else if (randomNeed === currentNeeds[6] || randomNeed === currentNeeds[7]) {
     if (needBtn === 'rest'){
       moodProgress += 2
       progressBar.style.width = `${moodProgress}%`
       progressBar.textContent = `${moodProgress}%`
+      panda.src = '/assets/images/rest.gif'
     }
   }
 
@@ -130,6 +145,7 @@ function timesUp() {
 
   }
 }
+
 function finalMood(){
   const happy = "You're a great pet owner, your pet is happy! "
   const sad = "BOOOHOOO! You're a horrible owner, your pet is sad.... you should be disappointed!"

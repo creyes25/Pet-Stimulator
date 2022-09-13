@@ -11,7 +11,7 @@ const currentNeeds = [
 ]
 
 /*-------------------------------- Variables --------------------------------*/
-let timeLeft = 10
+let timeLeft = 75
 let counter
 let randomNeed, needs
 let moodProgress = 0 
@@ -50,7 +50,7 @@ function init() {
   progressBar.style.width = '0'
   moodStatus.textContent = ''
   petNeed.textContent = ''
-  timeLeft = 10
+  timeLeft = 75
   if (counter && needs) {
     clearInterval(counter)
     clearInterval(needs)
@@ -79,7 +79,7 @@ function timerCountDown(){
 function displayNeed() {
   randomNeed = currentNeeds[Math.floor(Math.random() * currentNeeds.length)]
   petNeed.textContent = randomNeed
-  
+
 }
 
 function increaseMood(evt) {

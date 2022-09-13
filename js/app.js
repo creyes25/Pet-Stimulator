@@ -145,6 +145,10 @@ function disableButtons(){
 }
 
 function gameReset(){
+  feedBtn.disabled = false
+  attentionBtn.disabled = false
+  entertainBtn.disabled = false
+  restBtn.disabled = false
   resetGame.hidden = true
   init()
 }

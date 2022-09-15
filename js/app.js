@@ -75,7 +75,7 @@ function timerCountDown(){
   timeLeft -= 1
   let min = Math.floor(timeLeft / 60)
   let seconds = Math.floor(timeLeft % 60)
-  
+  countdownEl.className =' animate__animated animate__bounceInLeft'
   countdownEl.textContent = `${min < 10 ? '0' : '' }${min} : ${seconds < 10 ? '0' : ''}${seconds}`
   timesUp()
 }
@@ -83,6 +83,7 @@ function timerCountDown(){
 function displayNeed() {
   randomNeed = currentNeeds[Math.floor(Math.random() * currentNeeds.length)]
   petNeed.textContent = randomNeed
+  petNeed.className =  'animate__animated animate__zoomIn'
   
   if (randomNeed === currentNeeds[0] || randomNeed === currentNeeds[1]) {
     panda.src = '/assets/images/hungry.gif'
@@ -181,6 +182,7 @@ function gameReset(){
 }
 
 function instructionsCard() {
+
 }
-popover.placement('right')
+
 

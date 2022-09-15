@@ -6,6 +6,8 @@ body {
     url(../assets/images/forest.jpg);
   background-position: center;
   background-size: 1600px 1250px;
+  animation: backInLeft;
+  animation-duration: 2s;
 }
 
 
@@ -20,6 +22,8 @@ div{
   font-size: 48px;
   -webkit-text-stroke: .3px black;
   background-size: 45px 100px;
+  animation: flipInX;
+  animation-duration: 1s;
 }
 
 #panda {
@@ -28,10 +32,9 @@ div{
 }
 
 #need {
-  font-size: 30px;
+  font-size: 35px;
   color:  #f7d6bc;
   text-shadow: 8px 4px 8px black;
-  margin: 0;
   -webkit-text-stroke: .5px black;
 }
 

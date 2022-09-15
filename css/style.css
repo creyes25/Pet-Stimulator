@@ -1,32 +1,57 @@
 body {
   text-align: center;
-  background-color: #73A580;
-  background-image: url(../assets/images/forest.png);
-  background-position: center;
-  background-size: cover;
-  
+  background-image: linear-gradient(
+    rgba(5, 79, 38, 0.713), 
+    rgba(13, 86, 45, 0.454)),
+    url(../assets/images/forest.jpg);
+  background-size: 1500px 790px;
 }
 
+
 div{
-  margin: 30px;
+  margin: 20px ;
 }
 
 #pet-name {
-  margin-top: 20px;
-  color: #DBF2FF;
+  margin-top: 12px;
+  color: #fccba1;
   text-shadow: 8px 4px 8px black;
-  font-size: 45px;
+  font-size: 48px;
+  -webkit-text-stroke: .3px black;
+  background-size: 45px 100px;
 }
 
 #panda {
   height: 245px;
-  margin-top: 55px;
+  margin-top: 20px;
 }
 
+#need {
+  font-size: 30px;
+  color:  #f7d6bc;
+  text-shadow: 8px 4px 8px black;
+  margin: 0;
+  -webkit-text-stroke: .5px black;
+}
 
 #timer {
   font-size: 45px;
+  color:  #f7d6bc;
+  text-shadow: 8px 4px 8px black;
+  margin: 60px;
+  -webkit-text-stroke: .5px black;
+
 }
+
+#mood-status {
+  font-size: 30px;
+  font-weight: 500px;
+  color: #f7d6bc;
+  text-shadow: 8px 3px 8px black;
+  margin: 0;
+  -webkit-text-stroke: .5px black;
+}
+
 
 .progress{
   margin-top: 10px;

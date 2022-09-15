@@ -13,7 +13,7 @@
   <h1 id="pet-name">Mr. Cuddles 🐼</h1>
   <div  id="start-btn" >
     <button id = "start" class="btn btn-primary"> Start Game</button>
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <button id="instructions"  class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" hidden>
     Instructions
     </button>
     <div class="collapse" id="collapseExample">
@@ -22,14 +22,14 @@
       </div>
     </div>
   </div>
+  <div id="countdown">
+    <h2 id="timer"></h2>
+  </div>
   <div id="pet">
     <img id="panda" src="/assets/images/panda.gif" alt="A randomly generated placeholder">
   </div>
   <div id="pet-needs">
     <h5 id="need"></h5>
-  </div>
-  <div id="countdown">
-    <h2 id="timer"></h2>
   </div>
   <div id="display-mood">
     <h4 id="mood-status"></h4>

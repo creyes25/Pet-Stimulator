@@ -29,6 +29,9 @@ const moodStatus = document.querySelector('#mood-status')
 const petNeed = document.querySelector('#need')
 const resetGame = document.querySelector('#reset')
 const panda = document.querySelector('#panda')
+const instructionBtn = document.querySelector('#instructions')
+const instructions = document.querySelector('#collapseExample')
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -38,6 +41,7 @@ attentionBtn.addEventListener('click', increaseMood)
 entertainBtn.addEventListener('click', increaseMood)
 restBtn.addEventListener('click', increaseMood)
 resetGame.addEventListener('click', gameReset )
+instructionBtn.addEventListener('show.bs.collapse', instructionsCard)
 
 
 
@@ -176,4 +180,7 @@ function gameReset(){
   init()
 }
 
+function instructionsCard(evt) {
+  console.log(evt)
+}
 

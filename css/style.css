@@ -4,7 +4,10 @@ body {
     rgba(5, 79, 38, 0.713), 
     rgba(13, 86, 45, 0.454)),
     url(../assets/images/forest.jpg);
-  background-size: 1500px 790px;
+  background-position: center;
+  background-size: 1600px 1250px;
+
+
 }
 
 
@@ -63,5 +66,12 @@ div{
 #care-btns{
   display: flex;
   justify-content: space-evenly;
-  align-content: flex-end;
 }
+
+#start,#feed, #attention, #entertain, #rest, #reset {
+  background-color: black;
+  border-color: white;
+}
+
+
+

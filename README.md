@@ -1,4 +1,4 @@
-## __Tittle: Taking care of Mr.Cuddles__ 
+## __Title: Taking care of Mr.Cuddles__ 
 
 ## Getting Started: #
 

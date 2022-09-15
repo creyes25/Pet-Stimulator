@@ -10,11 +10,19 @@
   <title>Mr. Cuddles</title>
 </head>
 <body>
-  <h1 id="pet-name">Mr. Cuddles</h1>
-  <div id="start-btn">
-    <button id = "start">Start Game</button>
+  <h1 id="pet-name">Mr. Cuddles 🐼</h1>
+  <div  id="start-btn" >
+    <button id = "start" class="btn btn-primary"> Start Game</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Instructions
+    </button>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        You just became a new pet owner of Mr.Cuddles. You have to take care of Mr.Cuddles in many different ways. If you don't properly take care of him, he will be sad and we will take him away from you. Keep him happy by giving him what he needs in the moment. You want his mood bar to be filled so you can keep him. 
+      </div>
+    </div>
   </div>
-  <div id="Pet">
+  <div id="pet">
     <img id="panda" src="/assets/images/panda.gif" alt="A randomly generated placeholder">
   </div>
   <div id="pet-needs">
@@ -30,13 +38,13 @@
     <div class="progress-bar" role="progressbar" style="width: 0%;"  aria-valuemin="0" aria-valuemax="100"></div>
   </div>
   <div id="care-btns">
-    <button id="feed">Feed</button>
-    <button id="attention">Attention</button>
-    <button id="entertain">Entertainment</button>
-    <button id="rest">Rest</button>
+    <button class="btn btn-primary" id="feed">Feed</button>
+    <button class="btn btn-primary" id="attention">Attention</button>
+    <button class="btn btn-primary" id="entertain">Entertainment</button>
+    <button class="btn btn-primary" id="rest">Rest</button>
   </div>
   <div>
-    <button id="reset" hidden>Try Again</button>
+    <button id="reset" class="btn btn-primary" hidden>Try Again?</button>
   </div>
 </body>
 </html>

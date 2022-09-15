@@ -1,13 +1,13 @@
 /*-------------------------------- Constants --------------------------------*/
 const currentNeeds = [
-  "I'm hungry", 
-  "Can you give me food?", 
-  "I feel lonely", 
-  "I want your attention", 
-  "I'm bored", 
-  "I want to play", 
-  "I'm tired", 
-  "I'm ready to sleep"
+  "I'm hungry.. 🍽", 
+  "Can you give me food? 🎋", 
+  "I need affection.. 🥺", 
+  "Give me attention.. 🥺", 
+  "I'm bored.. 🙄", 
+  "I want to play 🫣 ", 
+  "I'm tired.. 🥱 ", 
+  "I'm ready to sleep.. 😴"
 ]
 
 /*-------------------------------- Variables --------------------------------*/

@@ -6,13 +6,11 @@ body {
     url(../assets/images/forest.jpg);
   background-position: center;
   background-size: 1600px 1250px;
-
-
 }
 
 
 div{
-  margin: 20px ;
+  margin-top: 30px ;
 }
 
 #pet-name {
@@ -68,9 +66,17 @@ div{
   justify-content: space-evenly;
 }
 
-#start,#feed, #attention, #entertain, #rest, #reset {
+#start, #feed, #attention, #entertain, #rest, #reset {
   background-color: black;
   border-color: white;
+}
+
+#instructions {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  font-weight: 50px;
+
 }
 
 

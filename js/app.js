@@ -29,8 +29,7 @@ const moodStatus = document.querySelector('#mood-status')
 const petNeed = document.querySelector('#need')
 const resetGame = document.querySelector('#reset')
 const panda = document.querySelector('#panda')
-const instructionBtn = document.querySelector('#instructions')
-const instructions = document.querySelector('#collapseExample')
+const instructionBtn = document.querySelector('[data-bs-toggle="popover"]')
 
 
 
@@ -41,8 +40,9 @@ attentionBtn.addEventListener('click', increaseMood)
 entertainBtn.addEventListener('click', increaseMood)
 restBtn.addEventListener('click', increaseMood)
 resetGame.addEventListener('click', gameReset )
-instructionBtn.addEventListener('show.bs.collapse', instructionsCard)
 
+
+let popover = new bootstrap.Popover(instructionBtn, instructionsCard)
 
 
 
@@ -180,7 +180,7 @@ function gameReset(){
   init()
 }
 
-function instructionsCard(evt) {
-  console.log(evt)
+function instructionsCard() {
 }
+popover.placement('right')
 

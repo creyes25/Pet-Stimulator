@@ -30,7 +30,7 @@ const petNeed = document.querySelector('#need')
 const resetGame = document.querySelector('#reset')
 const panda = document.querySelector('#panda')
 const instructionBtn = document.querySelector('[data-bs-toggle="popover"]')
-
+const gameSound = new Audio('../assets/audio/game.wav')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -47,6 +47,7 @@ let popover = new bootstrap.Popover(instructionBtn, instructionsCard)
 
 
 /*-------------------------------- Functions --------------------------------*/
+
 function init() {
   startBtn.hidden = startBtn.hidden === true ? false : true
   countdownEl.textContent = ''
@@ -64,6 +65,8 @@ function init() {
     startTimer()
   }
   panda.src = "/assets/images/panda.gif"
+  gameSound.volume = .10
+  gameSound.play()
 }
 
 function startTimer() {
@@ -141,12 +144,14 @@ function timesUp() {
     countdownEl.textContent = 'Times Up!'
     finalMood()
     resetGame.removeAttribute('hidden')
+    gameSound.pause()
 
   }else if (moodProgress === 100 ) {
     clearInterval(counter)
     clearInterval(needs)
     finalMood()
     resetGame.removeAttribute('hidden')
+    gameSound.pause()
 
   }
 }

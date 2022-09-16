@@ -7,7 +7,7 @@
     * You just became a new pet owner of Mr. Cuddles. You have to take care of Mr. Cuddles in many different ways. If you don't properly take care of him, he will be sad and we will take him away from you. Keep him happy by giving him what he needs in the moment. You want his mood bar to be filled so you can keep him. 
 
 
-## Screenshot: 
+## Screenshots: 
  ![alt text](./assets/images/readme-image1.png)
  ![alt text](./assets/images/readme-image1.png)
 ## Technologies Used: 

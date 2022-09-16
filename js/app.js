@@ -55,7 +55,7 @@ function init() {
   progressBar.style.width = '0'
   moodStatus.textContent = ''
   petNeed.textContent = ''
-  timeLeft = 5
+  timeLeft = 40
   if (counter && needs) {
     clearInterval(counter)
     clearInterval(needs)

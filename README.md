@@ -1,7 +1,6 @@
 ## __Title: Taking care of Mr. Cuddles__ 
 
 ## Getting Started: #
-
   * https://mrcuddles.netlify.app/
 
   * __Instructions :__

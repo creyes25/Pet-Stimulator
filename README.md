@@ -16,6 +16,9 @@
   * CSS
 
 ## Credits: 
+  * Background Image : https://www.vecteezy.com/vector-art/358933-bamboo
+  * Animations: https://animate.style/
+  * Backgound music: https://freesound.org/
 
 ## Next Steps: 
   - [ ] Add a startup screen where it gives you instructions.

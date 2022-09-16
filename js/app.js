@@ -157,7 +157,7 @@ function timesUp() {
 }
 
 function finalMood(){
-  const happy = "You're a great pet owner, your pet is happy! "
+  const happy = "You're a great pet owner, Mr. Cuddles is happy! "
   const sad = "BOOOHOOO! You're a horrible owner, Mr. Cuddles is sad.... you should be disappointed!"
   if (moodProgress === 100) {
     moodStatus.textContent = happy

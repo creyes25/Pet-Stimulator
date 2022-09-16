@@ -8,7 +8,8 @@
 
 
 ## Screenshot: 
-
+ ![alt text](./assets/images/readme-image1.png)
+ ![alt text](./assets/images/readme-image1.png)
 ## Technologies Used: 
   * JavaScript
   * HTML

@@ -86,7 +86,17 @@ div{
   font-weight: 50px;
 }
 
+#start:hover, #feed:hover, #attention:hover, #entertain:hover, #rest:hover, #reset:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
 
+#instructions:hover{
+  background-color: black;
+  color: white;
+  border-color: white;
+}
 
 
 

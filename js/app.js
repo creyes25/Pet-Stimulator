@@ -55,7 +55,7 @@ function init() {
   progressBar.style.width = '0'
   moodStatus.textContent = ''
   petNeed.textContent = ''
-  timeLeft = 75
+  timeLeft = 5
   if (counter && needs) {
     clearInterval(counter)
     clearInterval(needs)
@@ -158,7 +158,7 @@ function timesUp() {
 
 function finalMood(){
   const happy = "You're a great pet owner, your pet is happy! "
-  const sad = "BOOOHOOO! You're a horrible owner, your pet is sad.... you should be disappointed!"
+  const sad = "BOOOHOOO! You're a horrible owner, Mr. Cuddles is sad.... you should be disappointed!"
   if (moodProgress === 100) {
     moodStatus.textContent = happy
     panda.src = '/assets/images/happy.gif'
